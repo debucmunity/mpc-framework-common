@@ -3,7 +3,7 @@ import { checkSettingsValid, Circuit } from "../src";
 
 import {create_} from "../ReadText/new_val";
 
-const aPlusB=await create_('../text/bristol-circuit.txt', '../text/circuit-info.txt');
+const aPlusB=await create_('./text/bristol-circuit.txt', './text/circuit-info.txt');
 
 // const aPlusB: Circuit = {
 //   bristol: [
