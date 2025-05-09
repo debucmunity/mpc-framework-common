@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { checkSettingsValid, Circuit } from "../src";
 
-import {create_} from "../ReadFile/new_val";
+import {create_} from "../ReadText/new_val";
 
 const aPlusB=await create_('../bristol-circuit.txt', '../circuit-info.txt');
 
