@@ -22,6 +22,9 @@
     "url": "git+https://github.com/voltrevo/mpc-framework-common.git"
   },
   "license": "MIT",
+  "dependencies": {
+ "@types/node": "^7.0.5"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.17",
     "@types/mocha": "^10.0.7",

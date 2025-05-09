@@ -1,44 +1,48 @@
 import { expect } from "chai";
 import { checkSettingsValid, Circuit } from "../src";
 
-const aPlusB: Circuit = {
-  bristol: [
-    '1 3',
-    '2 1 1',
-    '1 1',
-    '',
-    '2 1 0 1 2 AAddB',
-  ].join('\n'),
-  info: {
-    constants: [],
-    inputs: [
-      { name: 'a', type: 'number', address: 0, width: 1 },
-      { name: 'b', type: 'number', address: 1, width: 1 },
-    ],
-    outputs: [
-      { name: 'c', type: 'number', address: 2, width: 1 },
-    ],
-  },
-  mpcSettings: [
-    {
-      name: 'alice',
-      inputs: ['a'],
-      outputs: ['c'],
-    },
-    {
-      name: 'bob',
-      inputs: ['b'],
-      outputs: ['c'],
-    },
-  ],
-};
+import {create_} from "../ReadText/new_val";
+
+const aPlusB=await create_('./text/bristol-circuit.txt', './text/circuit-info.txt');
+
+// const aPlusB: Circuit = {
+//   bristol: [
+//     '1 3',
+//     '2 1 1',
+//     '1 1',
+//     '',
+//     '2 1 0 1 2 AAddB',
+//   ].join('\n'),
+//   info: {
+//     constants: [],
+//     inputs: [
+//       { name: 'a', type: 'number', address: 0, width: 1 },
+//       { name: 'b', type: 'number', address: 1, width: 1 },
+//     ],
+//     outputs: [
+//       { name: 'c', type: 'number', address: 2, width: 1 },
+//     ],
+//   },
+//   mpcSettings: [
+//     {
+//       name: 'alice',
+//       inputs: ['a'],
+//       outputs: ['c'],
+//     },
+//     {
+//       name: 'bob',
+//       inputs: ['b'],
+//       outputs: ['c'],
+//     },
+//   ],
+// };
 
 describe('checkSettingsValid', () => {
   it('accepts valid settings', () => {
     const checkResult = checkSettingsValid(
       aPlusB,
       'alice',
-      { a: 3 },
+      { input0: 3, input1: 4, input2: 5 },
     );
 
     expect(checkResult).to.be.undefined;
