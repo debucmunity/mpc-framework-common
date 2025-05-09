@@ -118,12 +118,12 @@ export async function create_(circuitfile: string, circuitInfofile: string): Pro
     },
   ],
   }
-  console.log(input_for_A);
-  console.log(input_for_B);
-  console.log(output_name);
-  console.log(testcase.bristol);
-  console.log(testcase.info);
-  console.log(testcase.mpcSettings);
+  // console.log(input_for_A);
+  // console.log(input_for_B);
+  // console.log(output_name);
+  // console.log(testcase.bristol);
+  // console.log(testcase.info);
+  // console.log(testcase.mpcSettings);
   return testcase;
 }
 
