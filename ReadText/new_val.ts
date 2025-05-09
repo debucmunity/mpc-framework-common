@@ -16,7 +16,7 @@ function dupicate_character(str: string, num: number): string {
 }
 
 async function readFileFromCircuit(filePath: string): Promise<string[]> {
-  const file = await open('../test.txt', 'r');
+  const file = await open(filePath, 'r');
   let lines: string[] =[];
   for await (const line of file.readLines()) {
     lines.push(line);
